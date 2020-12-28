@@ -4,7 +4,7 @@ import com.github.elczupakadra.projectName.model.ToDoItem;
 import lombok.Data;
 
 @Data
-public class ToDoItemTypicode {
+ class ToDoItemTypicode {
 
     private int userId;
     private int id;
@@ -27,7 +27,7 @@ public class ToDoItemTypicode {
     }
 
 
-    public boolean isCompleted() {
+    public boolean getCompleted() {
         return completed;
     }
 }

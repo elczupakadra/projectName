@@ -15,10 +15,11 @@ import java.net.http.HttpResponse;
 
 @RequiredArgsConstructor
 @Service
-public class TypicodeService implements ToDoItemService {
+ class TypicodeService implements ToDoItemService {
 
 
     private final HttpClient httpClient;
+    private final ToDoItemTypicodeMapper mapper;
 
     @Override
     public ToDoItem fetch(int id) {
@@ -32,7 +33,7 @@ public class TypicodeService implements ToDoItemService {
 
             var toDoItemTypicode =  new ObjectMapper().readValue(response.body(), ToDoItemTypicode.class);
 
-            return new ToDoItemTypicodeAdapter(toDoItemTypicode);
+            return mapper.map(toDoItemTypicode);
 
         } catch (URISyntaxException | InterruptedException e) {
             e.printStackTrace();

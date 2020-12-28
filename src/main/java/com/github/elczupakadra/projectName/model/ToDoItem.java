@@ -1,5 +1,9 @@
 package com.github.elczupakadra.projectName.model;
 
+
+import org.immutables.value.Value;
+
+@Value.Immutable
 public interface ToDoItem {
 
     int getUserId();
@@ -8,7 +12,7 @@ public interface ToDoItem {
 
     String getTitle();
 
-    boolean isCompleted();
+    boolean getCompleted();
 
 
 
