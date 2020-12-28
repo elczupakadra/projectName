@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class Składnik {
 @Getter
 @Setter
-    private String nazwa;
+    private final String nazwa;
     public Składnik(String nazwa){
         this.nazwa = nazwa;
     }
